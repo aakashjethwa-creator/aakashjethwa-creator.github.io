@@ -5,6 +5,7 @@ export interface VideoWork {
   thumbnail?: string;
   youtubeId: string;
   feature?:boolean;
+  priority?:number;
 }
 
 export const WORKS: VideoWork[] = [
@@ -31,8 +32,10 @@ export const WORKS: VideoWork[] = [
   { id: 'tr10', title: 'Ek Chatur Naar', category: 'Trailer', youtubeId: 't-WME4yy2Wo' },
   { id: 'tr11', title: 'DUSSHERA', category: 'Trailer', youtubeId: 'oJ2SpQQdzJE' },
   { id: 'tr12', title: 'Jassi Weds Jassi', category: 'Trailer', youtubeId: 'bLspB-x-N6M' },
-  { id: 'tr13', title: 'De De Pyaar De 2', category: 'Trailer', youtubeId: '59aIp7SfIIk', feature:true },
-  { id: 'tr14', title: 'Beinteha', category: 'Trailer', youtubeId: 'JHQQjFxVNUI' },
+  {id: 'tr18', title: 'Lukkhe', category: 'Trailer', youtubeId: 'yv9rOjSBAjc',feature:true, priority:1},
+  { id: 'tr13', title: 'De De Pyaar De 2', category: 'Trailer', youtubeId: '59aIp7SfIIk', feature:true, priority:2 },
+  {id: 'tr19', title: 'Return Of The Jungle', category: 'Trailer', youtubeId: '_VWn6Q_Uzhw', feature:true, priority:3},
+  { id: 'tr14', title: 'Beinteha', category: 'Trailer', youtubeId: 'JHQQjFxVNUI', },
   { id: 'tr15', title: 'Astitva', category: 'Trailer', youtubeId: 'Yg9qGzumRaE' },
   { id: 'tr16', title: 'Khichdi 2', category: 'Trailer', youtubeId: 'zXgWKBh_6rU' },
   { id: 'tr17', title: 'One Two Cha Cha Chaa', category: 'Trailer', youtubeId: '2nSNhoswrRk' },

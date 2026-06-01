@@ -5,14 +5,12 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { FeaturedVideo } from './components/FeaturedVideo';
-import { HorizontalWorkScroll } from './components/HorizontalWorkScroll';
-import { WorkSection } from './components/WorkSection';
 import { Footer } from './components/Footer';
 import { VideoModal } from './components/VideoModal';
+import { MagneticMosaic } from './components/MagneticMosaic';
 
 export default function App() {
   const [selectedVideo, setSelectedVideo] = useState<VideoWork | null>(null);
-  const [filter, setFilter] = useState<'All' | 'Teaser' | 'Trailer' | 'Shortfilm'>('All');
 
   return (
     <div className="min-h-screen selection:bg-brand-red selection:text-white">
@@ -20,14 +18,7 @@ export default function App() {
       <Hero />
       <About />
       <FeaturedVideo />
-
-      <HorizontalWorkScroll onVideoSelect={setSelectedVideo} />
-
-      {/* <WorkSection 
-        filter={filter} 
-        setFilter={setFilter} 
-        onVideoSelect={setSelectedVideo} 
-      /> */}
+      <MagneticMosaic onVideoSelect={setSelectedVideo} />
       <Footer />
 
       <AnimatePresence>

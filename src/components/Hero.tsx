@@ -38,7 +38,7 @@ export const Hero = () => {
             className="flex flex-col gap-4 w-full max-w-sm"
           >
             <a 
-              href="https://instagram.com" 
+              href="https://www.instagram.com/aakkaasshhh__14/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="group flex items-center justify-between p-6 bg-white/5 hover:bg-brand-red transition-all duration-500 border border-white/10"

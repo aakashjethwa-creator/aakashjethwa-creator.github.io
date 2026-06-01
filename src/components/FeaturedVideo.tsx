@@ -1,11 +1,35 @@
-import { motion } from 'motion/react';
-import { Play } from 'lucide-react';
+import { Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { WORKS, VideoWork } from '../constants';
 
 export const FeaturedVideo = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const featureVideo:VideoWork = WORKS?.filter(f=>f?.feature)?.[0]; 
+  const [activeFeatureIndex, setActiveFeatureIndex] = useState(0);
+  const featureVideos: VideoWork[] = WORKS.filter((work) => work.feature)?.sort((a, b) => (a.priority ?? -1) - (b.priority ?? -1));
+  const hasFeaturedVideos = featureVideos.length > 0;
+  const featureVideo = hasFeaturedVideos ? featureVideos[activeFeatureIndex % featureVideos.length] : null;
+
+  const nextFeature = () => {
+    if (!hasFeaturedVideos) {
+      return;
+    }
+
+    setIsPlaying(false);
+    setActiveFeatureIndex((prev) => (prev + 1) % featureVideos.length);
+  };
+
+  const prevFeature = () => {
+    if (!hasFeaturedVideos) {
+      return;
+    }
+
+    setIsPlaying(false);
+    setActiveFeatureIndex((prev) => (prev - 1 + featureVideos.length) % featureVideos.length);
+  };
+
+  if (!hasFeaturedVideos) {
+    return null;
+  }
 
   return (
     <section className="py-24 bg-brand-black px-6">
@@ -18,9 +42,27 @@ export const FeaturedVideo = () => {
                 <span className="text-brand-red italic">{featureVideo?.title}</span>
               </h2>
             </div>
-            <p className="max-w-md text-white/40 text-sm leading-relaxed">
-              A high-octane action series by Rohit Shetty. This trailer showcases our expertise in fast-paced editing and visual storytelling.
-            </p>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+              <p className="max-w-md text-white/40 text-sm leading-relaxed">
+                A closer look at our latest featured release.
+              </p>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={prevFeature}
+                  className="p-3 border border-white/20 hover:border-brand-red transition-colors"
+                  aria-label="Previous featured video"
+                >
+                  <ChevronLeft size={18} />
+                </button>
+                <button
+                  onClick={nextFeature}
+                  className="p-3 border border-white/20 hover:border-brand-red transition-colors"
+                  aria-label="Next featured video"
+                >
+                  <ChevronRight size={18} />
+                </button>
+              </div>
+            </div>
           </div>
 
           <div className="relative aspect-video w-full bg-zinc-900 overflow-hidden group border border-white/5 shadow-2xl">

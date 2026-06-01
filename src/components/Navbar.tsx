@@ -34,7 +34,7 @@ export const Navbar = () => {
           <a href="#about" className="hover:text-brand-red transition-colors">About</a>
           <a href="#contact" className="hover:text-brand-red transition-colors">Contact</a>
           <div className="flex items-center gap-4 ml-4">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red transition-colors">
+            <a href="https://www.instagram.com/aakkaasshhh__14/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red transition-colors">
               <Instagram size={18} />
             </a>
             <a href="https://in.linkedin.com/in/aakash-jethwa-ab02821ab" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red transition-colors">
@@ -60,7 +60,7 @@ export const Navbar = () => {
           <a href="#about" onClick={handleCloseMenu} className="hover:text-brand-red transition-colors">About</a>
           <a href="#contact" onClick={handleCloseMenu} className="hover:text-brand-red transition-colors">Contact</a>
           <div className="flex items-center gap-5 pt-2">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red transition-colors">
+            <a href="https://www.instagram.com/aakkaasshhh__14/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red transition-colors">
               <Instagram size={18} />
             </a>
             <a href="https://in.linkedin.com/in/aakash-jethwa-ab02821ab" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red transition-colors">

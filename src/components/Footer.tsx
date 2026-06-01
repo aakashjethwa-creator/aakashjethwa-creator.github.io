@@ -13,7 +13,7 @@ export const Footer = () => {
             </h2>
             <div className="flex flex-wrap gap-4">
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/aakkaasshhh__14/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-white/5 hover:bg-brand-red transition-colors font-bold uppercase tracking-widest text-xs flex items-center gap-3"
